@@ -1,0 +1,757 @@
+/* ============================================================
+   Freshly 🌿 — Main Stylesheet
+   Structure:
+     1. CSS Variables (Design Tokens)
+     2. Reset & Base
+     3. Navbar
+     4. Hero Section
+     5. Section Titles (shared)
+     6. Categories Grid
+     7. Offer Banner
+     8. Product Cards
+     9. Daily Fresh Picks
+    10. Reviews / Vibes
+    11. Footer
+    12. Chatbot
+    13. Scroll Reveal Animation
+    14. Responsive (Mobile)
+   ============================================================ */
+
+
+/* ============================================================
+   1. CSS VARIABLES — Design Tokens
+   ============================================================ */
+:root {
+  --green:     #b5d99c;
+  --green-dk:  #7aba5d;
+  --peach:     #ffc8a2;
+  --peach-dk:  #f4976c;
+  --yellow:    #fde9a2;
+  --beige:     #fdf6ec;
+  --pink:      #ffd6e0;
+  --lavender:  #dcd3f5;
+  --white:     #ffffff;
+  --text:      #3d3533;
+  --muted:     #8a7f7a;
+  --shadow:    0 6px 24px rgba(0, 0, 0, 0.08);
+  --radius:    18px;
+  --radius-sm: 10px;
+}
+
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--beige);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+a    { text-decoration: none; color: inherit; }
+img  { max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+
+
+/* ============================================================
+   3. NAVBAR
+   ============================================================ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--green);
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.7rem;
+  color: var(--green-dk);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-logo span { color: var(--peach-dk); }
+
+/* Search bar */
+.search-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: var(--beige);
+  border: 2px solid var(--green);
+  border-radius: 50px;
+  padding: 6px 14px;
+  max-width: 420px;
+  transition: border-color 0.25s;
+}
+.search-wrap:focus-within { border-color: var(--green-dk); }
+.search-wrap input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.search-wrap input::placeholder { color: var(--muted); }
+.search-wrap input:focus { outline: none; }
+.search-wrap .s-icon { font-size: 1.1rem; margin-right: 6px; }
+
+/* Nav action buttons */
+.nav-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+
+.nav-btn {
+  background: var(--green);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-btn:hover { background: var(--green-dk); transform: translateY(-1px); }
+.nav-btn.outline { background: transparent; border: 2px solid var(--green-dk); }
+.nav-btn.outline:hover { background: var(--green); }
+
+/* Icon buttons (cart, wishlist) */
+.icon-btn {
+  position: relative;
+  font-size: 1.35rem;
+  background: none;
+  padding: 4px;
+  transition: transform 0.2s;
+}
+.icon-btn:hover { transform: scale(1.18); }
+
+/* Cart count badge */
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: var(--peach-dk);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ============================================================
+   4. HERO SECTION
+   ============================================================ */
+.hero {
+  background: linear-gradient(135deg, #d6f0c2 0%, #ffefd5 55%, #ffd6e0 100%);
+  padding: 60px 5% 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative glow blob in background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(253, 233, 162, 0.55), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-text { flex: 1; min-width: 240px; }
+
+.hero-tag {
+  display: inline-block;
+  background: var(--green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  color: var(--text);
+}
+.hero h1 em { color: var(--green-dk); font-style: normal; }
+
+.hero p {
+  margin: 14px 0 26px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 380px;
+}
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--green-dk);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(122, 186, 93, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(122, 186, 93, 0.5);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid var(--green-dk);
+  transition: background 0.2s;
+}
+.btn-secondary:hover { background: var(--green); }
+
+/* Right side floating emoji blob */
+.hero-visual {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-blob { position: relative; width: 300px; height: 300px; }
+
+.hero-blob-bg {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 40% 40%, #b5d99c88, #ffc8a255);
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+  animation: blobmorph 7s ease-in-out infinite alternate;
+}
+@keyframes blobmorph {
+  from { border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+  to   { border-radius: 40% 60% 45% 55% / 60% 40% 50% 50%; }
+}
+
+.hero-emojis {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 30px;
+  font-size: 2.8rem;
+  line-height: 1;
+  animation: floatUp 4s ease-in-out infinite alternate;
+}
+@keyframes floatUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-10px); }
+}
+
+
+/* ============================================================
+   5. SECTION TITLES (shared utility)
+   ============================================================ */
+.section { padding: 52px 5%; }
+
+.section-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.75rem;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.section-sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+
+/* ============================================================
+   6. CATEGORIES GRID
+   ============================================================ */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 16px;
+}
+
+.cat-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 22px 10px 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.22s, box-shadow 0.22s;
+  cursor: pointer;
+}
+.cat-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cat-card .icon { font-size: 2.2rem; display: block; margin-bottom: 8px; }
+.cat-card .name { font-weight: 700; font-size: 0.85rem; color: var(--text); }
+
+/* Individual pastel bg per category */
+.cat-card:nth-child(1) { background: #e8f7d4; }
+.cat-card:nth-child(2) { background: #fff0e0; }
+.cat-card:nth-child(3) { background: #fde9e9; }
+.cat-card:nth-child(4) { background: #e8f0ff; }
+.cat-card:nth-child(5) { background: #fff7d4; }
+.cat-card:nth-child(6) { background: #f0ffe8; }
+.cat-card:nth-child(7) { background: #ffe8f5; }
+.cat-card:nth-child(8) { background: #e8f7f5; }
+
+
+/* ============================================================
+   7. OFFER BANNER
+   ============================================================ */
+.offer-banner {
+  margin: 0 5%;
+  background: linear-gradient(120deg, var(--green-dk) 0%, #a0d68a 100%);
+  border-radius: 20px;
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative confetti emoji */
+.offer-banner::after {
+  content: '🎉';
+  position: absolute;
+  right: 160px;
+  top: -8px;
+  font-size: 5rem;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.offer-text .tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+}
+.offer-text h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+.offer-text p { font-size: 0.9rem; opacity: 0.88; margin-top: 4px; }
+
+.offer-btn {
+  background: #fff;
+  color: var(--green-dk);
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 11px 26px;
+  border-radius: 50px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.offer-btn:hover { transform: scale(1.04); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); }
+
+
+/* ============================================================
+   8. PRODUCT CARDS
+   ============================================================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.22s, box-shadow 0.22s;
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* Wishlist heart */
+.product-card .wish-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.product-card .wish-btn:hover  { transform: scale(1.2); background: var(--pink); }
+.product-card .wish-btn.active { background: var(--pink); }
+
+/* Emoji image area */
+.product-img-wrap {
+  background: var(--beige);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.5rem;
+  transition: transform 0.3s;
+}
+.product-card:hover .product-img-wrap { transform: scale(1.05); }
+
+.product-info { padding: 14px 14px 16px; }
+
+/* Coloured badges */
+.product-badge {
+  display: inline-block;
+  background: var(--yellow);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 50px;
+  margin-bottom: 6px;
+  color: #7a6800;
+}
+.product-badge.fresh { background: var(--green);  color: #2d5a00; }
+.product-badge.sale  { background: var(--peach);  color: #a33800; }
+
+.product-name   { font-weight: 800; font-size: 0.95rem; margin-bottom: 4px; line-height: 1.3; }
+.product-weight { font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; }
+
+.product-footer { display: flex; align-items: center; justify-content: space-between; }
+
+.product-price { font-weight: 800; font-size: 1.05rem; color: var(--green-dk); }
+.product-price .old {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+.add-btn {
+  background: var(--green);
+  color: var(--text);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 50px;
+  transition: background 0.2s, transform 0.15s;
+}
+.add-btn:hover { background: var(--green-dk); color: #fff; transform: scale(1.05); }
+.add-btn.added { background: var(--peach-dk); color: #fff; }
+
+
+/* ============================================================
+   9. DAILY FRESH PICKS
+   ============================================================ */
+.fresh-picks { background: linear-gradient(135deg, #eaffdb, #fff7e6); }
+
+.picks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.pick-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.pick-card:hover { transform: translateY(-4px); }
+
+.pick-emoji       { font-size: 2.8rem; flex-shrink: 0; }
+.pick-info h4     { font-weight: 800; font-size: 0.9rem; margin-bottom: 2px; }
+.pick-info span   { font-size: 0.78rem; color: var(--muted); }
+.pick-info .price { color: var(--green-dk); font-weight: 800; font-size: 0.95rem; margin-top: 4px; }
+
+
+/* ============================================================
+   10. REVIEWS / VIBES
+   ============================================================ */
+.vibes        { background: var(--white); }
+.vibes-inner  { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.vibe-card {
+  flex: 1;
+  min-width: 220px;
+  background: var(--beige);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.vibe-card .stars    { font-size: 1rem; margin-bottom: 8px; }
+.vibe-card .reviewer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+
+/* ============================================================
+   11. FOOTER
+   ============================================================ */
+footer {
+  background: var(--text);
+  color: #e8e0db;
+  padding: 44px 5% 24px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.footer-brand .logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.footer-brand p { font-size: 0.85rem; line-height: 1.6; opacity: 0.7; }
+
+.footer-col h5 {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--green);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.footer-col ul li a { font-size: 0.85rem; opacity: 0.75; transition: opacity 0.2s; }
+.footer-col ul li a:hover { opacity: 1; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.8rem;
+  opacity: 0.55;
+}
+
+.social-links { display: flex; gap: 12px; font-size: 1.2rem; }
+.social-links a { transition: transform 0.2s; display: inline-block; }
+.social-links a:hover { transform: scale(1.25); }
+
+
+/* ============================================================
+   12. CHATBOT
+   ============================================================ */
+
+/* Floating action button */
+.chat-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  background: var(--green-dk);
+  color: #fff;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  font-size: 1.55rem;
+  box-shadow: 0 6px 22px rgba(122, 186, 93, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  animation: popIn 0.5s ease 1s both;
+}
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.chat-fab:hover {
+  transform: scale(1.1) rotate(-8deg);
+  box-shadow: 0 8px 28px rgba(122, 186, 93, 0.6);
+}
+
+/* Chat window popup */
+.chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 28px;
+  z-index: 998;
+  width: 310px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.13);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.chat-window.open { display: flex; }
+
+.chat-header {
+  background: var(--green-dk);
+  color: #fff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.chat-header .avatar { font-size: 1.5rem; }
+.chat-header h4      { font-weight: 800; font-size: 0.95rem; }
+.chat-header p       { font-size: 0.75rem; opacity: 0.8; }
+.chat-close { margin-left: auto; font-size: 1.2rem; cursor: pointer; opacity: 0.75; }
+.chat-close:hover { opacity: 1; }
+
+.chat-body {
+  padding: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* Message bubbles */
+.msg {
+  max-width: 80%;
+  padding: 9px 13px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.msg.bot  { background: var(--beige); align-self: flex-start; border-bottom-left-radius: 4px; }
+.msg.user { background: var(--green); align-self: flex-end;   border-bottom-right-radius: 4px; }
+
+.chat-footer {
+  padding: 10px 12px;
+  border-top: 1px solid #f0ebe5;
+  display: flex;
+  gap: 8px;
+}
+.chat-footer input {
+  flex: 1;
+  border: 2px solid var(--green);
+  border-radius: 50px;
+  padding: 7px 12px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  outline: none;
+}
+.chat-footer input:focus { border-color: var(--green-dk); }
+
+.chat-send {
+  background: var(--green-dk);
+  color: #fff;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.chat-send:hover { background: var(--peach-dk); }
+
+
+/* ============================================================
+   13. SCROLL REVEAL ANIMATION
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   14. RESPONSIVE — Mobile
+   ============================================================ */
+@media (max-width: 640px) {
+  nav { flex-wrap: wrap; }
+  .search-wrap { order: 3; max-width: 100%; width: 100%; }
+
+  .hero { flex-direction: column; text-align: center; }
+  .hero p { margin-inline: auto; }
+  .hero-btns { justify-content: center; }
+
+  .offer-banner { flex-direction: column; text-align: center; }
+
+  .chat-window { width: calc(100vw - 32px); right: 16px; }
+}
