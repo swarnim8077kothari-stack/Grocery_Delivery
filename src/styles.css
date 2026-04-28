@@ -82,6 +82,111 @@ input {
   right: -5rem;
 }
 
+.login-page {
+  min-height: 100vh;
+  padding: 3.5rem 0;
+}
+
+.login-shell {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.login-note {
+  padding: 1rem 0.8rem 1rem 0.1rem;
+}
+
+.login-note h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  line-height: 1.02;
+}
+
+.back-home-button {
+  margin-top: 1.5rem;
+}
+
+.login-card {
+  padding: 1.6rem;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at top right, rgba(230, 179, 155, 0.13), transparent 35%),
+    rgba(27, 36, 33, 0.96);
+  border: 1px solid rgba(243, 221, 195, 0.08);
+  box-shadow: var(--shadow-soft);
+}
+
+.login-card-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-card-top h2 {
+  margin: 0;
+}
+
+.login-card-top p {
+  margin: 0.25rem 0 0;
+  color: var(--text-soft);
+}
+
+.login-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.login-form label {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.login-form span {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(243, 221, 195, 0.12);
+  background: rgba(243, 221, 195, 0.05);
+  color: var(--text-main);
+  outline: none;
+}
+
+.login-form input::placeholder {
+  color: rgba(242, 231, 215, 0.5);
+}
+
+.login-submit,
+.alt-signup-button {
+  width: 100%;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+
+.login-divider span {
+  flex: 1;
+  height: 1px;
+  background: rgba(243, 221, 195, 0.12);
+}
+
+.login-divider p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -803,6 +908,7 @@ input {
   }
 
   .hero,
+  .login-shell,
   .picks-panel,
   .footer-grid {
     grid-template-columns: 1fr;
@@ -818,6 +924,10 @@ input {
 
   .hero-art {
     min-height: 25rem;
+  }
+
+  .login-note {
+    padding-right: 0;
   }
 
   .hero-card-main {
@@ -858,6 +968,14 @@ input {
 
   .hero-art {
     min-height: 22rem;
+  }
+
+  .login-page {
+    padding: 2rem 0;
+  }
+
+  .login-card {
+    padding: 1.15rem;
   }
 
   .hero-card-main {
