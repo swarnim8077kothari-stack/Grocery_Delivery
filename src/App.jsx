@@ -4,25 +4,25 @@ const categories = [
   {
     icon: "🍎",
     name: "Fruits",
-    description: "Sweet, juicy, and a bit over-photogenic.",
+    description: "Sweet, juicy, and honestly the section we spent too long styling.",
     className: ""
   },
   {
     icon: "🥦",
     name: "Vegetables",
-    description: "Leafy things, crisp things, soup things.",
+    description: "Leafy things, crisp things, soup things, and the occasional good decision.",
     className: "offset-card"
   },
   {
     icon: "🥛",
     name: "Dairy",
-    description: "Milk, yogurt, butter and soft little comforts.",
+    description: "Milk, yogurt, butter and those tiny 2 a.m. fridge comforts.",
     className: ""
   },
   {
     icon: "🍪",
     name: "Snacks",
-    description: "Study break essentials and accidental midnight extras.",
+    description: "Study-break fuel and the snacks that somehow vanish first.",
     className: "wider-card"
   }
 ];
@@ -213,6 +213,7 @@ export default function App() {
         <section className="hero container">
           <div className="hero-copy">
             <p className="eyebrow">small-batch grocery website for cozy evenings</p>
+            <span className="doodle-tag">little cart, big feelings</span>
             <h1>Fresh groceries, delivered gently 🥬</h1>
             <p className="hero-text">
               Soft fruits, crunchy greens, snack runs and midnight milk cartons,
@@ -226,11 +227,11 @@ export default function App() {
             <div className="hero-notes">
               <div className="note-card">
                 <span>🍑</span>
-                <p>Picked this morning</p>
+                <p>Picked this morning, probably with sleepy eyes</p>
               </div>
               <div className="note-card note-card-tilt">
                 <span>🚲</span>
-                <p>Student-budget delivery</p>
+                <p>Student-budget delivery, still a little cute</p>
               </div>
             </div>
           </div>
@@ -241,6 +242,7 @@ export default function App() {
             <div className="hero-card hero-card-main">
               <p>Today feels like</p>
               <h3>peaches + pesto + soft bread</h3>
+              <span className="tiny-scribble">written after one iced coffee</span>
               <div className="hero-basket">
                 <span>🍞</span>
                 <span>🍐</span>
@@ -261,7 +263,7 @@ export default function App() {
 
         <section className="offer-strip">
           <div className="container offer-strip-inner">
-            <p>20% off today on fruits and dairy if your cart feels a little too healthy ✨</p>
+            <p>20% off today on fruits and dairy, which felt generous so we kept it ✨</p>
           </div>
         </section>
 
@@ -295,6 +297,7 @@ export default function App() {
                 A small rotating bunch of produce we want to show off a little:
                 softer colors, fresher leaves, and prices that still feel fair.
               </p>
+              <span className="section-whisper">not a huge catalog, just the good stuff first</span>
               <a className="primary-button" href="#featured">See featured products</a>
             </div>
 
@@ -330,6 +333,8 @@ export default function App() {
             <h2>Featured Products</h2>
           </div>
 
+          <p className="featured-note">A few cards are intentionally a bit off-grid because perfect rows felt too showroom-ish.</p>
+
           <div className="product-grid">
             {products.map((product) => (
               <ProductCard
@@ -348,6 +353,7 @@ export default function App() {
           <div>
             <h3>Leaf & Lantern</h3>
             <p>Soft dark grocery shopping for students, flatmates, and people who forgot breakfast again.</p>
+            <span className="footer-murmur">made with snacks nearby and maybe too many rounded corners</span>
           </div>
           <div>
             <h4>Quick links</h4>

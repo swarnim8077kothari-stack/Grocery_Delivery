@@ -261,7 +261,7 @@ input {
 }
 
 .hero-copy {
-  padding: 1rem 0.4rem 0.5rem 0;
+  padding: 1.2rem 0.9rem 0.5rem 0;
 }
 
 .eyebrow {
@@ -270,6 +270,25 @@ input {
   letter-spacing: 0.08em;
   text-transform: lowercase;
   font-size: 0.84rem;
+}
+
+.doodle-tag,
+.tiny-scribble,
+.section-whisper,
+.footer-murmur,
+.featured-note {
+  color: var(--text-soft);
+}
+
+.doodle-tag {
+  display: inline-block;
+  margin: 0 0 0.85rem 0.2rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(243, 221, 195, 0.06);
+  border: 1px dashed rgba(243, 221, 195, 0.18);
+  font-size: 0.78rem;
+  transform: rotate(-2.5deg);
 }
 
 .hero h1,
@@ -286,7 +305,7 @@ input {
 
 .hero-text {
   max-width: 33rem;
-  margin: 1.1rem 0 0;
+  margin: 1.15rem 0 0 0.15rem;
   color: var(--text-soft);
   font-size: 1.05rem;
 }
@@ -295,7 +314,7 @@ input {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin-top: 1.6rem;
+  margin-top: 1.75rem;
 }
 
 .primary-button {
@@ -315,14 +334,14 @@ input {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 2.2rem;
 }
 
 .note-card {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  padding: 0.9rem 1rem;
+  padding: 0.95rem 1.05rem 0.88rem;
   border-radius: 20px;
   background: rgba(32, 44, 40, 0.86);
   border: 1px solid rgba(243, 221, 195, 0.09);
@@ -330,7 +349,7 @@ input {
 }
 
 .note-card-tilt {
-  transform: rotate(-2deg);
+  transform: rotate(-2deg) translateY(6px);
 }
 
 .hero-art {
@@ -398,11 +417,19 @@ input {
   max-width: 9ch;
 }
 
+.tiny-scribble {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  opacity: 0.82;
+  transform: rotate(-3deg);
+}
+
 .hero-basket {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-top: 2rem;
+  margin-top: 1.7rem;
 }
 
 .hero-basket span {
@@ -466,6 +493,10 @@ input {
   font-size: clamp(2rem, 5vw, 3.1rem);
 }
 
+.section-heading {
+  margin-left: 0.15rem;
+}
+
 .category-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -474,7 +505,7 @@ input {
 }
 
 .category-card {
-  padding: 1.4rem 1.2rem 1.25rem;
+  padding: 1.45rem 1.2rem 1.18rem;
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(32, 44, 40, 0.96), rgba(26, 35, 32, 0.9));
   border: 1px solid rgba(243, 221, 195, 0.08);
@@ -488,11 +519,11 @@ input {
 }
 
 .offset-card {
-  margin-top: 1rem;
+  margin-top: 1.15rem;
 }
 
 .wider-card {
-  margin-top: -0.5rem;
+  margin-top: -0.65rem;
 }
 
 .category-icon {
@@ -526,7 +557,7 @@ input {
   grid-template-columns: 1fr 0.9fr;
   gap: 1.5rem;
   margin-top: 1.8rem;
-  padding: 1.7rem;
+  padding: 1.75rem 1.7rem 1.85rem;
   border-radius: 30px;
   background:
     radial-gradient(circle at top right, rgba(230, 179, 155, 0.12), transparent 35%),
@@ -545,6 +576,13 @@ input {
   max-width: 34rem;
   margin: 1rem 0 1.4rem;
   color: var(--text-soft);
+}
+
+.section-whisper {
+  display: block;
+  margin: -0.4rem 0 1.2rem 0.2rem;
+  font-size: 0.84rem;
+  opacity: 0.8;
 }
 
 .pick-stack {
@@ -578,18 +616,26 @@ input {
 }
 
 .mini-pick-shift {
-  margin-left: 1rem;
+  margin-left: 1.25rem;
+  transform: rotate(-1deg);
 }
 
 .featured {
   padding-bottom: 4rem;
 }
 
+.featured-note {
+  max-width: 38rem;
+  margin: 0.9rem 0 0 0.2rem;
+  font-size: 0.93rem;
+  opacity: 0.88;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.2rem;
-  margin-top: 1.9rem;
+  margin-top: 1.55rem;
 }
 
 .product-card {
@@ -608,11 +654,11 @@ input {
 }
 
 .product-card-lift {
-  margin-top: 0.7rem;
+  margin-top: 0.85rem;
 }
 
 .product-card-wide {
-  margin-top: -0.35rem;
+  margin-top: -0.45rem;
 }
 
 .wishlist-button {
@@ -650,7 +696,7 @@ input {
 }
 
 .product-info {
-  padding: 1rem 1rem 1.05rem;
+  padding: 0.95rem 1rem 1.1rem;
 }
 
 .product-tag {
@@ -696,6 +742,14 @@ input {
 .site-footer p {
   display: block;
   margin: 0.5rem 0 0;
+}
+
+.footer-murmur {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  opacity: 0.78;
+  transform: rotate(-1.5deg);
 }
 
 .chatbot-button {
@@ -758,6 +812,10 @@ input {
     padding-top: 2.6rem;
   }
 
+  .hero-copy {
+    padding-right: 0;
+  }
+
   .hero-art {
     min-height: 25rem;
   }
@@ -783,6 +841,14 @@ input {
 
   .hero h1 {
     font-size: 2.5rem;
+  }
+
+  .doodle-tag,
+  .tiny-scribble,
+  .section-whisper,
+  .footer-murmur,
+  .featured-note {
+    transform: none;
   }
 
   .hero-text,
