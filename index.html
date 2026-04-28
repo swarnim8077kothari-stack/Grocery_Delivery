@@ -1,1 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaf & Lantern Grocery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-glow page-glow-left"></div>
+  <div class="page-glow page-glow-right"></div>
 
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="#" class="brand">
+        <span class="brand-mark">🥕</span>
+        <div>
+          <p class="brand-name">Leaf & Lantern</p>
+          <span class="brand-tag">late-night grocery club</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-panel">
+        <label class="search-wrap" for="searchInput">
+          <span>🔎</span>
+          <input id="searchInput" type="search" placeholder="Search fruits, snacks, dairy...">
+        </label>
+
+        <div class="nav-actions">
+          <button class="icon-button cart-button" type="button" aria-label="Shopping cart">
+            🛒
+            <span class="cart-count">3</span>
+          </button>
+          <a class="auth-button" href="#footer">Login / Signup</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">small-batch grocery website for cozy evenings</p>
+        <h1>Fresh groceries, delivered gently 🥬</h1>
+        <p class="hero-text">
+          Soft fruits, crunchy greens, snack runs and midnight milk cartons,
+          all packed with a little more care than usual.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#featured">Shop fresh picks</a>
+          <a class="ghost-button" href="#categories">Browse aisles</a>
+        </div>
+
+        <div class="hero-notes">
+          <div class="note-card">
+            <span>🍑</span>
+            <p>Picked this morning</p>
+          </div>
+          <div class="note-card note-card-tilt">
+            <span>🚲</span>
+            <p>Student-budget delivery</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="fruit-cloud fruit-cloud-one">🍊</div>
+        <div class="fruit-cloud fruit-cloud-two">🥬</div>
+        <div class="hero-card hero-card-main">
+          <p>Today feels like</p>
+          <h3>peaches + pesto + soft bread</h3>
+          <div class="hero-basket">
+            <span>🍞</span>
+            <span>🍐</span>
+            <span>🥛</span>
+            <span>🥒</span>
+          </div>
+        </div>
+        <div class="hero-card hero-card-side">
+          <p>tiny cart moodboard</p>
+          <div class="mood-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer-strip">
+      <div class="container offer-strip-inner">
+        <p>20% off today on fruits and dairy if your cart feels a little too healthy ✨</p>
+      </div>
+    </section>
+
+    <section id="categories" class="categories container section-block">
+      <div class="section-heading">
+        <p class="eyebrow">wander around a little</p>
+        <h2>Shop by category</h2>
+      </div>
+
+      <div class="category-grid">
+        <article class="category-card">
+          <span class="category-icon">🍎</span>
+          <h3>Fruits</h3>
+          <p>Sweet, juicy, and a bit over-photogenic.</p>
+        </article>
+        <article class="category-card offset-card">
+          <span class="category-icon">🥦</span>
+          <h3>Vegetables</h3>
+          <p>Leafy things, crisp things, soup things.</p>
+        </article>
+        <article class="category-card">
+          <span class="category-icon">🥛</span>
+          <h3>Dairy</h3>
+          <p>Milk, yogurt, butter and soft little comforts.</p>
+        </article>
+        <article class="category-card wider-card">
+          <span class="category-icon">🍪</span>
+          <h3>Snacks</h3>
+          <p>Study break essentials and accidental midnight extras.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="daily-picks container section-block">
+      <div class="section-heading">
+        <p class="eyebrow">highlight of the day</p>
+        <h2>Daily Fresh Picks</h2>
+      </div>
+
+      <div class="picks-panel">
+        <div class="pick-copy">
+          <h3>Handpicked for calm kitchens and messy hostel shelves.</h3>
+          <p>
+            A small rotating bunch of produce we want to show off a little:
+            softer colors, fresher leaves, and prices that still feel fair.
+          </p>
+          <a class="primary-button" href="#featured">See featured products</a>
+        </div>
+
+        <div class="pick-stack">
+          <div class="mini-pick">
+            <span>🥭</span>
+            <div>
+              <strong>Mangoes</strong>
+              <p>just-ripe and glowing</p>
+            </div>
+          </div>
+          <div class="mini-pick mini-pick-shift">
+            <span>🥬</span>
+            <div>
+              <strong>Baby Spinach</strong>
+              <p>for pasta, wraps, or good intentions</p>
+            </div>
+          </div>
+          <div class="mini-pick">
+            <span>🧀</span>
+            <div>
+              <strong>Fresh Cheese</strong>
+              <p>mild, creamy, and snackable</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="featured container section-block">
+      <div class="section-heading">
+        <p class="eyebrow">tiny favorites shelf</p>
+        <h2>Featured Products</h2>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card" data-name="Peach Basket">
+          <button class="wishlist-button" type="button" aria-label="Add Peach Basket to wishlist">♡</button>
+          <div class="product-image-wrap">
+            <img
+              class="product-image"
+              src="https://images.unsplash.com/photo-1629828874514-d77f3d7f1a1c?auto=format&fit=crop&w=800&q=80"
+              data-images="https://images.unsplash.com/photo-1629828874514-d77f3d7f1a1c?auto=format&fit=crop&w=800&q=80|https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=800&q=80|https://images.unsplash.com/photo-1595743825637-cdafc8ad4173?auto=format&fit=crop&w=800&q=80"
+              alt="Peach basket"
+            >
+          </div>
+          <div class="product-info">
+            <p class="product-tag">Fruits</p>
+            <h3>Peach Basket</h3>
+            <div class="product-meta">
+              <strong>$6.80</strong>
+              <button class="add-cart-button" type="button">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card product-card-lift" data-name="Garden Greens">
+          <button class="wishlist-button" type="button" aria-label="Add Garden Greens to wishlist">♡</button>
+          <div class="product-image-wrap">
+            <img
+              class="product-image"
+              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
+              data-images="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80|https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=800&q=80|https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80"
+              alt="Fresh greens"
+            >
+          </div>
+          <div class="product-info">
+            <p class="product-tag">Vegetables</p>
+            <h3>Garden Greens</h3>
+            <div class="product-meta">
+              <strong>$4.20</strong>
+              <button class="add-cart-button" type="button">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Cloud Milk">
+          <button class="wishlist-button" type="button" aria-label="Add Cloud Milk to wishlist">♡</button>
+          <div class="product-image-wrap">
+            <img
+              class="product-image"
+              src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80"
+              data-images="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80|https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=800&q=80|https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=800&q=80"
+              alt="Milk bottle"
+            >
+          </div>
+          <div class="product-info">
+            <p class="product-tag">Dairy</p>
+            <h3>Cloud Milk</h3>
+            <div class="product-meta">
+              <strong>$3.50</strong>
+              <button class="add-cart-button" type="button">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card product-card-wide" data-name="Study Snacks Box">
+          <button class="wishlist-button" type="button" aria-label="Add Study Snacks Box to wishlist">♡</button>
+          <div class="product-image-wrap">
+            <img
+              class="product-image"
+              src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80"
+              data-images="https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80|https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80|https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80"
+              alt="Snack box"
+            >
+          </div>
+          <div class="product-info">
+            <p class="product-tag">Snacks</p>
+            <h3>Study Snacks Box</h3>
+            <div class="product-meta">
+              <strong>$8.90</strong>
+              <button class="add-cart-button" type="button">Add to cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Leaf & Lantern</h3>
+        <p>Soft dark grocery shopping for students, flatmates, and people who forgot breakfast again.</p>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <a href="#categories">Categories</a>
+        <a href="#featured">Featured</a>
+        <a href="#">Delivery notes</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>hello@leaflantern.shop</p>
+        <p>+1 555 018 229</p>
+        <p>Open till a little too late</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="chatbot-button" type="button" aria-label="Open chat support">💬</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
